@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,maximum-scale=1.0">
+	<title>播放器</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="css/sidebar.css"/>
+	<script src="js/jquery-1.7.2.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/sideBar.js"></script>
+	<script src="js/vue.js"></script>
+	<script>
+		window.onload = window.onresize = function (){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth * 20 / 320 + 'px';
+			var bofangniu=document.querySelector('.bofangniu');
+			var zhuanjitu=document.querySelector('#zhuanpan');
+			var bofangf=document.querySelector('#bofangf');
+			var music = document.getElementById('music1');
+			bofangniu.onclick=function(){
+			  	if (music.paused){    
+        		music.play(); 
+        		 zhuanjitu.style.animation='60s'+' '+'zhuandong1'+' '+'linear'+' '+'infinite';
+        		 bofangf.src="img/switch1.png";
+        		}else{    
+       			 music.pause(); 
+       			 zhuanjitu.style.animationPlayState="paused";
+       			 bofangf.src="img/switch.png";
+   			 	}    
+			 };
+			var vm = new Vue({
+				data:{
+					data:[{
+						src:"img/music.png",
+						name:'音乐',
+						href:"index.html"
+					},{
+						src:"img/radios.png",
+						name:'电台',
+						href:"diantai.html"
+					},{
+						src:"img/plays.png",
+						name:'MV',
+						href:"diantai.html"
+					},{
+						src:"img/icon.png",
+						name:'听歌识曲',
+						href:"diantai.html"
+					},{
+						src:"img/download.png",
+						name:'下载',
+						href:"diantai.html"
+					},{
+						src:"img/user.png",
+						name:'个人中心',
+						href:"login.html"
+					}]
+				},
+			}).$mount('#menu');
+			window.onscroll = function () {
+				//向上滚动的距离
+				var xTop = document.documentElement.scrollTop || document.body.scrollTop;
+				var scrollTop = xTop;
+
+				if (scrollTop >0) {
+					head.style.position = 'fixed';
+					head.style.left = 0;
+					head.style.top = 0;
+					topd1.style.display = 'block';
+				} else {
+					head.style.position = 'static';
+					topd1.style.display = 'none';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<header class="clearfix top" style="height:3.407rem;position:relative">
+		<div class="topd" id="head">
+			<div class="topd1" id="topd1"></div>
+			<div class="btnd xiala"><span></span><span></span><span></span></div>
+			<h3>音乐</h3>
+			<a class="chazhaod" href="seek.html"></a>
+			<a class="sandiand"><span></span><span></span><span></span></a>
+		</div>
+	</header>
+	<!-- 轮播图 -->
+	<div class="banner clearfix">
+			<a href="javascript:;" id="left"></a>
+			<a href="javascript:;" id="right" ></a>
+			<ul class="banner1">
+				<li><img src="img/banner2.jpg" alt=""></li>
+				<li><img src="img/banner.jpg" alt=""></li>
+				<li><img src="img/banner1.jpg" alt=""></li>
+				<li><img src="img/banner2.jpg" alt=""></li>
+				<li style="margin: 0;"><img src="img/banner.jpg" alt=""></li>
+			</ul>
+			<p>Beauty And The Beast</p>
+			<div class="yuan">
+			<a class="active" href="javascript:;"></a>
+			<a class="aA" href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			</div>
+	</div>
+	<!-- 热歌速递 -->
+	<div class="hot clearfix">
+		<div class="hot1">热歌速递</div>
+		<ul class="hotB clearfix">
+			<li class="hotl">
+			<img class="img" src="img/hot2.jpg" alt="">
+			<img class="img1" src="img/hot1.jpg" alt="">
+			<img class="img3" src="img/hot.jpg" alt="">
+			<p></p>
+			</li>			
+			<li class="hotm">
+			<img class="img" src="img/hot.jpg" alt="">
+			<img class="img1" src="img/hot2.jpg" alt="">
+			<img class="img3" src="img/hot1.jpg" alt="">
+			</li>			
+			<li class="hotr">
+			<img class="img" src="img/hot1.jpg" alt="">
+			<img class="img1" src="img/hot.jpg" alt="">
+			<img class="img3" src="img/hot2.jpg" alt="">
+			</li>
+			<li class="hotL"><p>Trip-Hop | 致迷致幻 神游天外</p></li>
+			<li class="hotM"><p>绵绵不绝的温柔 循环不止的女声</p></li>
+			<li><p>在春风沉醉的晚上来曲华语摇滚</p></li>
+		</ul>		
+		<ul class="hotB hotN clearfix">
+			<li class="hotl">
+			<img class="img" src="img/hot2.jpg" alt="">
+			<img class="img1" src="img/hot1.jpg" alt="">
+			<img class="img3" src="img/hot.jpg" alt="">
+			<p></p>
+			</li>			
+			<li class="hotm">
+			<img class="img" src="img/hot.jpg" alt="">
+			<img class="img1" src="img/hot2.jpg" alt="">
+			<img class="img3" src="img/hot1.jpg" alt="">
+			</li>			
+			<li class="hotr">
+			<img class="img" src="img/hot1.jpg" alt="">
+			<img class="img1" src="img/hot.jpg" alt="">
+			<img class="img3" src="img/hot2.jpg" alt="">
+			</li>
+			<li class="hotL"><p>Trip-Hop | 致迷致幻 神游天外</p></li>
+			<li class="hotM"><p>绵绵不绝的温柔 循环不止的女声</p></li>
+			<li><p>在春风沉醉的晚上来曲华语摇滚</p></li>
+		</ul>
+	</div>
+	<!-- 播放框 -->
+	<div class="play clearfix">
+		<p class="zjt"><img id="zhuanpan" src="img/ganghao.jpg"></p><ul class="geinfo1"><li class="geming1">刚刚好</li><li>薛之谦</li></ul><span class="bofangniu"><img id="bofangf" src="img/switch.png"></span><span class="tianjiag">+</span>
+		<audio id="music1" src="ggh.mp3" loop="loop"></audio>
+	</div>
+	<!-- 侧边栏 -->
+	<div id="sideBar">
+		<h1 class="logo_side">
+			<a href="javacript:;">M</a>
+		</h1>
+		<ol id="menu">
+			<li v-for="v in data" :class="$index == 1? 'second':' '&&$index == 2? 'third':' ' &&$index == 3? 'forth':' ' &&$index == 4? 'fifth':' ' &&$index == 5? 'sixth':' '">
+				<img :src='v.src' alt="img">
+				<a href="javascript:;" :href="v.href">{{v.name}}</a>
+			</li>
+		</ol>
+		<div class="settings">
+			<img src="img/setting.png" alt="">
+			<a href="javascript:;" >設置</a>
+		</div>
+	</div>
+</body>
+</html>
